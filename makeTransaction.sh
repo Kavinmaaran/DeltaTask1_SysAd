@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="/home/kali/Desktop/sys"
+file="/home"
 
 if [ $2 != 0 ];
 then 
@@ -11,4 +11,3 @@ then
 else
 	echo "usuage: $0 <accountname> <amount(+ - deposit, - - withdraw )>"
 fi
-

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="/home/kali/Desktop/sys"
+file="/home"
 groupadd -f Branch1
 groupadd -f Branch2
 groupadd -f Branch3

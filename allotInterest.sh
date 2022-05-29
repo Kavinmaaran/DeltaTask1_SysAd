@@ -1,19 +1,19 @@
 #!/bin/bash
 
-file="/home/kali/Desktop/sys"
+file="/home"
 
-value=$(awk '{print $1"_"$2"_"$3"_"$4"_"$5}' ${file}/../sysad-task1-User_Accounts.txt)
+value=$(awk '{print $1"_"$2"_"$3"_"$4"_"$5}' ${file}/sysad-task1-User_Accounts.txt)
 for i in $value
 do
 	declare -A intrest
 	branch=$(echo $i |cut -d '_' -f 2)
-        values=$(awk '{print $1"_"$2}' ${file}/${branch}/Daily_Interest_Rates.txt )
-        for j in $values
-        do
-		key=$(echo $j |cut -d '_' -f 1)
-		values=$(echo $j |cut -d '_' -f2-)
-		values=${values::-2}
-		intrest[$key]=$values 
+	values=$(awk '{print $1"_"$2}' ${file}/${branch}/Daily_Interest_Rates.txt )
+	for j in $values
+	do
+	key=$(echo $j |cut -d '_' -f 1)
+	values=$(echo $j |cut -d '_' -f2-)
+	values=${values::-2}
+	intrest[$key]=$values 
 	done
 	intrests=0
 	person=$(echo $i |cut -d '_' -f 1)

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="/home/kali/Desktop/sys"
+file="/home"
 user=$USER
 z=$1
 > 4.txt
