@@ -1,12 +1,17 @@
 #!/bin/bash
 
-file="/home"
-
-value=$(awk '{print $1"_"$2"_"$3"_"$4"_"$5}' ${file}/sysad-task1-User_Accounts.txt)
+file="/home/CEO"
+user=$USER
+value=$(awk '{print $1"_"$2"_"$3"_"$4"_"$5}' ${file}/src/User_Accounts.txt)
 for i in $value
 do
 	declare -A intrest
 	branch=$(echo $i |cut -d '_' -f 2)
+	if [[ $user != "CEO" ]];
+	then
+		z=$(echo $user |cut -d '_' -f 1)
+		[[ $z != $branch ]] && continue
+	fi
 	values=$(awk '{print $1"_"$2}' ${file}/${branch}/Daily_Interest_Rates.txt )
 	for j in $values
 	do
@@ -26,10 +31,10 @@ do
 	[[ -n $a ]] && intrests=$(bc <<< "$intrests+$a")
 	[[ -n $b ]] && intrests=$(bc <<< "$intrests+$b")
 	[[ -n $c ]] && intrests=$(bc <<< "$intrests+$c")
-	p=$(cat ${file}/${person}/Current_Balance.txt)
+	p=$(cat ${file}/${branch}/${person}/Current_Balance.txt)
 	money=$(bc -l <<< "($intrests*$p)/(100*365)")
 	money=$(bc -l <<< "$money+$p")
-	echo $money > ${file}/${person}/Current_Balance.txt
+	echo $money > ${file}/${branch}/${person}/Current_Balance.txt
 done
 
 
