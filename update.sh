@@ -41,23 +41,23 @@ echo $count >${file}/Branch4/Branch_Current_Balance.txt
 value=$(awk '{if($2 =="Branch1"){print $1}}' sysad-task1-User_Accounts.txt)
 for i in $value
 do
-	(cat ${file}/${i}/Transaction_History.txt) > ${file}/Branch1/Branch_Transaction_History.txt
+	(cat ${file}/${i}/Transaction_History.txt) >> ${file}/Branch1/Branch_Transaction_History.txt
 done
 
 value=$(awk '{if($2 =="Branch2"){print $1}}' sysad-task1-User_Accounts.txt)
 for i in $value
 do
-	(cat ${file}/${i}/Transaction_History.txt) > ${file}/Branch2/Branch_Transaction_History.txt
+	(cat ${file}/${i}/Transaction_History.txt) >> ${file}/Branch2/Branch_Transaction_History.txt
 done
 
 value=$(awk '{if($2 =="Branch3"){print $1}}' sysad-task1-User_Accounts.txt)
 for i in $value
 do
-	(cat ${file}/${i}/Transaction_History.txt) > ${file}/Branch3/Branch_Transaction_History.txt
+	(cat ${file}/${i}/Transaction_History.txt) >> ${file}/Branch3/Branch_Transaction_History.txt
 done
 
 value=$(awk '{if($2 =="Branch4"){print $1}}' sysad-task1-User_Accounts.txt)
 for i in $value
 do
-	(cat ${file}/${i}/Transaction_History.txt) > ${file}/Branch4/Branch_Transaction_History.txt
+	(cat ${file}/${i}/Transaction_History.txt) >> ${file}/Branch4/Branch_Transaction_History.txt
 done

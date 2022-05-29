@@ -6,6 +6,7 @@ value=$(awk '{print $1$2}' sysad-task1-User_Accounts.txt )
 for i in $value
 do
 	sudo userdel -r ${i:0:7}
+	sudo groupdel ${i:0:7}
 done
 
 value=$(awk '{print $2}' sysad-task1-User_Accounts.txt | sort | uniq)
