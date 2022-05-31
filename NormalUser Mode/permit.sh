@@ -1,7 +1,7 @@
 ##!/bin/bash
 
 file="/home/CEO"
-
+groupadd -f CEO
 for j in $(ls -d Branch*)
 do
     chown ${j}_manager:${j} ${file}/${j}
@@ -21,6 +21,7 @@ do
         sudo setfacl -R -m u:${j}_manager:rwx ${file}/$j/$i
     done
     sudo usermod -aG ${j} CEO
+    sudo usermod -aG CEO ${j}_manager
     chown ${j}_manager:${j} ${file}/${j}/$j/*.txt
     chown ${j}_manager:CEO ${file}/${j}/$j
     sudo setfacl -R -m u:CEO:rwx ${file}/${j}/$j
