@@ -23,7 +23,7 @@ echo "alias makeTransaction='./makeTransaction.sh'" >> ~/.bashrc
 echo "alias genSummary='./genSummary.sh'" >> ~/.bashrc
 source ~/.bashrc
 
-#crontab -l > cron
-#echo "* * * * *  ${file}/allotInterest.sh" >>cron
-#crontab cron
-#rm cron
+crontab -l > cron
+echo "* * * * *  ${file}/allotInterest.sh" >>cron
+crontab cron
+rm cron
