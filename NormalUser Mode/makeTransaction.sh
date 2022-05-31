@@ -2,7 +2,7 @@
 
 file="/home/CEO"
 
-if [ $3 -ne 0 ];
+if [[ -n $3 && $3 -ne 0 ]];
 then 
 	a=$(bc<<<"$3+$(cat ${file}/$2/$1/Current_Balance.txt)")
 	[[ $(bc <<< "$a>=0") != 0 ]] && echo $a > ${file}/$2/$1/Current_Balance.txt

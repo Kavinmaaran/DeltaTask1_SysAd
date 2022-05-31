@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="/home"
+file="/home/CEO"
 user=$USER
 z=$1
 > 4.txt

@@ -12,7 +12,7 @@ do
 		z=$(echo $user |cut -d '_' -f 1)
 		[[ $z != $branch ]] && continue
 	fi
-	values=$(awk '{print $1"_"$2}' ${file}/${branch}/Daily_Interest_Rates.txt )
+	values=$(awk '{print $1"_"$2}' ${file}/${branch}/${branch}/Daily_Interest_Rates.txt )
 	for j in $values
 	do
 	key=$(echo $j |cut -d '_' -f 1)
