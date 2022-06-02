@@ -1,6 +1,7 @@
 #!/bin/bash
 
 file="/home/CEO"
+chmod 777 /home/CEO
 
 if [[  $# -eq 0 ]];
 then

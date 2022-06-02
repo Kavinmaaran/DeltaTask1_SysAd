@@ -2,12 +2,15 @@
 
 file="/home/CEO"
 groupadd -f CEO
+groupadd -f Branch1
+groupadd -f Branch2
+groupadd -f Branch3
+groupadd -f Branch4
 for j in $(ls -d Branch*)
 do
     chown ${j}_manager:${j} ${file}/${j}
     sudo chmod 770 ${file}/${j}
     cd $j
-    groupadd -f $j
     sudo setfacl -R -m u:$j_manager:rwx ${file}/$j
     for i in $(ls -d ACC*)
     do
