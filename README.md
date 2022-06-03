@@ -7,7 +7,7 @@
 
 ## While starting a new server
 ``apt update``  
-``apt upgrade``     
+``apt -y upgrade``     
 ``apt install sudo acl wget git``   
 
 ### Apply these commands to get started:
