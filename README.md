@@ -20,4 +20,9 @@ sign in to User CEO
 ``chmod +x init.sh``  
 ``./init.sh``   
 
-#### sign in to Root user while using ``genUser.sh`` and ``permit.sh``
+#### sign in to Root user while using ``genUser.sh`` and ``permit.sh``  
+
+In genSummary.sh the mean median and mode of each user is exported to:  
+1. mean - /home/CEO/src/meanusr.txt  
+2. median - /home/CEO/src/medianusr.txt
+3. mode - /home/CEO/src/modeusr.txt
