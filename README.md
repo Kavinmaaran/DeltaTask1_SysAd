@@ -26,3 +26,8 @@ In genSummary.sh the mean median and mode of each user is exported to:
 1. mean - /home/CEO/src/meanusr.txt  
 2. median - /home/CEO/src/medianusr.txt
 3. mode - /home/CEO/src/modeusr.txt
+
+For CEO no need of argument while using genSUmmary.  
+For Branch managers if no arguments given it takes users from there branch.    
+Branch manger to get genSummary of a text file its location can be given as argument.   
+* for example ``genSummary /home/CEO/src/Transacion_List.txt``  
