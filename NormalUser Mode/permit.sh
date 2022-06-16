@@ -8,7 +8,6 @@ groupadd -f Branch3
 groupadd -f Branch4
 for j in $(ls -d Branch*)
 do
-    chown ${j}_manager:${j} ${file}/${j}
     sudo chmod 770 ${file}/${j}
     cd $j
     sudo setfacl -R -m u:$j_manager:rwx ${file}/$j
@@ -33,4 +32,7 @@ do
     sudo setfacl -m u:CEO:rwx ${file}/${j}/$j
     sudo setfacl -m u:CEO:rwx ${file}/${j}/$j/*.txt
     cd ..
+    chown ${j}_manager:${j} ${file}/${j}
 done
+sudo chmod 770 ${file}/src/*.txt
+chown CEO:CEO ${file}/src/*.txt
