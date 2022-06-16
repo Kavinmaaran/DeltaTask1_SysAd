@@ -6,6 +6,7 @@ groupadd -f Branch1
 groupadd -f Branch2
 groupadd -f Branch3
 groupadd -f Branch4
+cd ${file}
 for j in $(ls -d Branch*)
 do
     sudo chmod 770 ${file}/${j}
